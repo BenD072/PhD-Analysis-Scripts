@@ -733,37 +733,5 @@ class PersonWindow:
         else:  # If run tweets is false, then just skip this block
             pass
 
-    def easter_egg(self):
-        update_text_output("Ah, it looks like you're trying to scrape my own twitter profile", self.window,
-                           self.text_box)
-        time.sleep(5)
-        update_text_output("Whilst I very much appreciate your interest in my boring tweets, did you ever consider that"
-                           " maybe I don't want you looking at my tweets?", self.window, self.text_box)
-        time.sleep(8)
-        update_text_output("You see, twitter research is a bit of a grey area when it comes to ethics and consent",
-                           self.window, self.text_box)
-        time.sleep(5)
-        update_text_output("People tweet their views and opinions out into the world and, under twitter's own terms and"
-                           " conditions, anyone is then able to view and save those tweets", self.window, self.text_box)
-        time.sleep(8)
-        update_text_output("But when you wrote that tweet and expressed that opinion, maybe you didn't intend"
-                           " for some random researcher to find and save it 2 years down the line", self.window,
-                           self.text_box)
-        time.sleep(8)
-        update_text_output("Maybe you don't even hold the same opinion that you did when you posted that tweet 2 years "
-                           "ago?",
-                           self.window, self.text_box)
-        time.sleep(6)
-        update_text_output("Maybe it was an embarrassing photo of you that you thought would be funny to post back then"
-                           " but that you now realise was a horrible decision to make", self.window, self.text_box)
-        time.sleep(8)
-        update_text_output("And that's the thing with the internet. Whatever happens there stays forever.",
-                           self.window, self.text_box)
-        time.sleep(6)
-        update_text_output("So the moral of the story is, think twice before you post something on the internet. "
-                           "You never know, some researcher who you don't even know might be using that tweet to build "
-                           "their thesis", self.window, self.text_box)
-        time.sleep(8)
-        update_text_output("Thank you for listening to my TED talk", self.window, self.text_box)
-        time.sleep(6)
+
 
