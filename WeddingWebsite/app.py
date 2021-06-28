@@ -14,6 +14,7 @@ import os
 app = Flask(__name__)  # Sets up the Flask application - __name__ references the current file
 DATABASE_URL = os.environ.get('DATABASE_URL') 
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL  
+db = SQLAlchemy(app)  # Initialise the database
 
 # Create model for the database
 
