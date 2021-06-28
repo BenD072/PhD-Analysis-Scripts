@@ -1,0 +1,475 @@
+head, body, html {
+    margin: 0;
+    color: black;
+    font-size:16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, sans-serif;
+    line-height: 1.5;
+    -webkit-text-size-adjust:100%
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    font-weight:500
+    text-align: center;
+}
+
+
+.content {  /* The . selector selects based on class. This sets margin and width of the whole div containing the table and form, whihc has class=content. */
+    margin: 0 auto;
+    width: 400px;
+
+}
+
+table, td, th {  /* Gives the table (including rows and columns) a 1 pixel border */
+    border: 1px solid #aaa;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%
+}
+
+th{
+    height: 30px;
+}
+
+td {
+    text-align: centre;
+    padding: 5px;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+#content {  /* The # selector selects elements base on id. This sets css for the text input field with id=content */
+    width: 70%;
+}
+
+/* button class - used to style links (e.g. back button) as a button */
+.button {
+    display: inline-block;
+    background: skyblue;
+    cursor: pointer;
+    border: None;
+    border-radius: 5px;
+    padding: 15px 32px;
+    font-size: 16px;
+    transition: background .3s
+    width: 50%
+}
+
+form {
+    background: None;
+    color: black;
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+}
+
+.name-input-field {
+    padding: 10px;
+}
+
+.navbar-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: skyblue;
+  width: 100%;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links,
+except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 700px) {
+  .navbar-ul li:not(:nth-last-of-type(-n+2)) {display: none;}
+  .navbar-li a.icon {
+    float: left;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the navbar with JavaScript when the user clicks on the icon.
+This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 700px) {
+  .navbar-ul.responsive {position: relative;}
+  .navbar-li.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbar-ul.responsive li {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.navbar-li .icon{
+    display: none;
+}
+
+.navbar-li {
+    display: inline;
+  float: right;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #008ae6;
+}
+
+.food-container, .food-container ul {
+  list-style-type: none;
+  margin: 5px;
+  padding: 5px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 20px;
+
+}
+
+.food-container li {
+    font-style: italic;
+}
+
+.countdown {
+    text-align: center;
+    font-size: 3vw;
+    font-weight: bold;
+    padding: 0;
+    margin: auto;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 150px;
+}
+
+.countdown-cube {
+    border-radius: 25px;
+    text-align: center;
+    font-size: 3vw;
+    font-weight: bold;
+    display: inline-block;
+    background-color: skyblue;
+    width: calc(100%/4);
+    vertical-align: top;
+    height: 100%
+    padding: 10px;
+    margin: 10px;
+
+}
+
+@media only screen and (max-width: 700px) {
+  /* For mobile phones: */
+  .countdown-container{
+    display: block;
+    height: auto;
+  }
+
+  .countdown-cube {
+    display: block;
+    width: 90%;  /* Width set to 100% */
+    border-radius: 25px;
+    text-align: center;
+    font-size: 3vw;
+    font-weight: bold;
+    background-color: skyblue;
+    vertical-align: top;
+    height: 100%
+    padding: auto;
+    margin: auto;
+  }
+}
+
+.countdown-title{
+    font-size: 25px;
+    padding: 5px;
+    margin: 5px;
+}
+.countdown-number{
+    font-size: 30px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.fade-in {
+    animation: fadeIn ease 5s;
+    -webkit-animation: fadeIn ease 5s;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity: 1;}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity: 1;}
+}
+
+/* Set the size of the div element that contains the map */
+#map {
+  text-align: center;
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 70%;
+  /* The width is the width of the web page */
+}
+
+#google-map{
+    width: 50%;
+    height: 100%;
+    float:right;
+}
+
+#address{
+    width: 50%;
+    float:left;
+    text-align: center;
+    font-size: 2em
+}
+
+@media only screen and (max-width: 750px) {
+    #address{
+        width: 100%;
+        float:left;
+        text-align: center;
+        font-size: 2em
+    }
+
+    #google-map{
+        width: 100%;
+        height: 100%;
+        float:right;
+    }
+}
+
+.accommodation-col-1{
+    text-align: center;
+    font-size: 20px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.accommodation-col-2{
+    text-align: center;
+    font-size: 20px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+@media only screen and (max-width: 750px) {
+    .accommodation-col-2{
+        text-align: center;
+        font-size: 20px;
+        grid-column-start: 1;
+        grid-column-end: 2;
+}
+
+}
+
+#comments-container{
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.status-block{
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 70%;
+    height: auto;
+    border-radius: 10px;
+    background-color: #4d94ff;
+}
+
+.status-name{
+    font-size: 1.5vw;
+    text-indent: 0.5em;
+    text-align: left;
+    color: black;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.status-text{
+    text-align: left;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    font-size: 1vw;
+}
+
+.status-text:after {
+    content: ""; /* This is necessary for the pseudo element to work. */
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 90%; /* Change this to whatever width you want. */
+    padding-top: 20px; /* This creates some space between the element and the border. */
+    border-bottom: 2px solid white; /* This creates the border. Replace black with whatever color you want. */
+}
+
+.comment-entry{
+    text-indent: 0.5em;
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    width: 35%;
+    margin: 10px;
+    font-size: 1vw;
+
+}
+
+.reply-entry{
+    text-indent: 0.5em;
+    border: none;
+    border-radius: 10px;
+    height: 25px;
+    width: 35%;
+    margin: 10px;
+    font-size: 1vw;
+
+}
+
+#new-comment{
+    margin: auto;
+    margin-top: 10px;
+    background-color: #4d94ff;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.replies-list{
+    text-align: left;
+    text-indent: 1em;
+    margin: 10px;
+    height: auto;
+    padding-bottom: 10px;
+}
+
+.reply{
+    width: 75%;
+    background-color: #cce0ff;
+    border-radius: 10px;
+    margin: 10px;
+    margin-bottom: 10px;
+
+}
+
+@media only screen and (max-width: 700px) {
+    .status-block{
+        margin: auto;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        width: 80%;
+        height: auto;
+        border-radius: 10px;
+        background-color: #4d94ff;
+}
+
+    .reply-entry{
+        display: block;
+        text-indent: 0.5em;
+        border: none;
+        border-radius: 10px;
+        height: 25px;
+        width: 60%;
+        margin: 5px;
+        font-size: 3vw;
+
+}
+    .comment-entry{
+        display: block;
+        text-indent: 0.5em;
+        border: none;
+        border-radius: 10px;
+        height: 30px;
+        width: 60%;
+        margin: 10px;
+        font-size: 3vw;
+
+}
+
+    .status-name{
+        font-size: 5vw;
+        text-indent: 0.5em;
+        text-align: left;
+        color: black;
+        font-weight: bold;
+        padding-top: 5px;
+}
+
+    .status-text{
+        text-align: left;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        font-size: 4vw;
+        margin: 5px;
+        margin-left: 10px;
+        overflow-wrap: break-word;
+        text-align-last: left;
+}
+}
+
+.b-m-overlay{
+    position: absolute;
+    top: 40%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+
+}
+
+.b-m-header{
+    font-size: 6vw;
+    font-style: italic;
+}
+
+.b-m-subhead{
+    font-size: 4vw;
+}
+
+#ben-and-monica-image{
+    opacity: 30%;
+    max-height: 650px;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+
+}
+
+@media only screen and (max-width: 700px) {
+   /* For mobile phones: */
+  .b-m-header {
+    font-size: 8vw;
+
+  }
+
+  .b-m-subhead{
+    font-size: 6vw;
+  }
+
+  .countdown {
+    text-align: center;
+    font-size: 6vw;
+    font-weight: bold;
+    padding: 0;
+    margin: auto;
+}
+
+}
+
