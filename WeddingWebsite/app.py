@@ -11,30 +11,11 @@ import psycopg2
 import os
 
 
-# In interactive python terminal, need to activate the database
-# from app import db
-# db.create_all
-# To delete the database entries - use db.session.query(GuestListDatabase).delete()
-# Then db.session.commit()
-
 app = Flask(__name__)  # Sets up the Flask application - __name__ references the current file
-DATABASE_URL = os.environ.get('DATABASE_URL')  # If doesn't work then use direct database link from heroku account
-app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL  # This tells the app where the database is located. 3 slashes is a relative path (relative to current directory) and 4 is an absolute path
-db = SQLAlchemy(app)  # Initialise the database
+DATABASE_URL = os.environ.get('DATABASE_URL') 
+app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL  
 
 # Create model for the database
-'''
-class GuestListDatabase(db.Model):
-    id = db.Column(db.Integer, primary_key=True)  # Sets up an column to hold the ID for each entry in the dataframe. Primairy key means that each ID will be unique
-    name = db.Column(db.String(200), nullable=False)  # A text column to hold the guest's name
-    date_created = db.Column(db.DateTime, default=datetime.utcnow)  # A column to hold the date the task was created
-    RSVP = db.Column(db.String(200), nullable=False)  # A text column to hold whether the guest is attending or not attending
-
-
-    def __repr__(self):
-        return '<Guest %r>' % self.id  # Returns the name and the ID each time we create a new element in the database
-'''
-
 
 class CommentDatabase(db.Model):
 
@@ -140,29 +121,6 @@ def delete_reply(id):
     except:
         return "There was a problem deleting that comment."
 
-'''
-# Create an index route - landing page
-@app.route('/guestlist', methods=['POST', 'GET'])  # '/' is the landing page url. POST/GET allows the route to send/recieve data from the database
-def show_guestlist():  # Create a function of what to do when someone lands in the '/' url
-    if request.method == 'POST':  # If a request to add information to the database is received
-        guest_name = request.form['content']  # task_content will be set to the input from the html form object with the 'content' id
-        if request.form['Attending_Button'] == 'Attending':
-            new_guest_name = GuestListDatabase(name=guest_name, RSVP='Attending')
-        elif request.form['Attending_Button'] == 'Not Attending':
-            new_guest_name = GuestListDatabase(name=guest_name, RSVP='Not Attending')
-
-        try:
-            db.session.add(new_guest_name)  # Will add the new_guest_name object to the database
-            db.session.commit()  # Comits to database
-            guests = GuestListDatabase.query.order_by(GuestListDatabase.date_created.desc()).all()
-            return render_template('Attending_Guest_List.html', tasks=guests)
-        except:
-            return 'There was an error adding your name'  # If adding name to database doesn't work, print error
-    else:  # If no request is being made to add to the database
-        guests = GuestListDatabase.query.order_by(GuestListDatabase.date_created.desc()).all()  # Queires database for items and then orders items by the date they were created. The .all() returns all items in the database, could also use .first() etc. to grab first
-        return render_template('Attending_Guest_List.html', tasks=guests)  # Will render the index.html file. Flask automatically looks for html files in the templates folder. The tasks parameter is used in the html jinja sntax to render the table
-'''
-
 @app.route('/menu')
 def menu_page():
     return render_template('menu.html')
@@ -176,26 +134,3 @@ if __name__ == "__main__":
     app.run(debug=True)  # Run the app
 
 
-# Template inherentance - create a master html file that contains skeleton of what each page will look like
-# Then inherent that skeleton in other html files/pages
-
-'''
-<div class="content">
-
-    <br>
-    <h1 style="text-align:center">Add Your Name(s) to RSVP!</h1>
-
-    <div>
-    <form style="text-align:center" action="/guestlist" method="POST">  <!-- Creates a form for data input -->
-        <input class="name-input-field" type="text" name="content" id="content">  <!-- Creates a text input field with the id as 'content'. Use this id in the app route to find/add information from this input field into the database -->
-        <input class="button" type="submit" name="Attending_Button" value="Attending">  <!-- A submit button with the value label add task -->
-        <input class="button" type="submit" name="Attending_Button" value="Not Attending">
-    </form>
-    </div>
-
-</div>
-
-<div style="text-align: center">
-    <a style="width:500px" href="/guestlist" class="button"><strong>See the Guest List!</strong></a>
-</div>
-'''
