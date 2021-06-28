@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+<html lang="en">
+
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <title>Wedding Menu</title>
+
+    <ul id="navbar" class="navbar-ul">  <!-- This contains the navigation bar -->
+        <li class="navbar-li"><a href="/comments"> Comments </a> </li>
+        <li class="navbar-li"><a href="/menu"> Wedding Food Menu </a> </li>
+        <li class="navbar-li"><a href="/directions"> Directions & Accommodation </a> </li>
+        <li class="navbar-li"><a href="/"> Home </a> </li>
+        <li class="navbar-li icon" style="float:left">
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </li>
+
+
+
+</ul>
+</head>
+{% endblock%}
+
+{% block body %}
+<body>
+<div class="food-container">
+    <p style="margin: auto; margin-top: 10px; text-align: center; width: 80%; font-size: 20px"> We are attending a tasting session in November to try out food and (more importantly) wine options for the wedding.
+        Food selections will be available after this date. Vegetarian and gluten free options will also be available. Until then, see our expected menu below! </p>
+    <p style="font-size: 25px;"> <strong>Menu</strong></p>
+    <ul style="margin-bottom: 20px;">
+        <li style="margin: 20px; font-style: normal; font-weight: bold"> <strong>Appetizers</strong></li>
+        <li style="margin: 15px;">Option 1: Pearls of melon with prosciutto ham, thyme oil, and rocket finished with a balsamic reduction</li>
+        <li style="margin: 15px;">Option 2: Carrot and coriander soup with toasted pumpkin seeds and crème fraiche</li>
+
+    </ul>
+
+    <ul>
+        <li style="margin: 20px; font-style: normal; font-weight: bold"> <strong>Main Course</strong></li>
+        <li style="margin: 15px;">Option 1: Pan fried salmon with buttered asparagus, crushed new potatoes finished with a tomato and chive hollandaise sauce</li>
+        <li style="margin: 15px;">Option 2: Baked chicken breast wrapped in pancetta and served on whole grain mustard cremes potatoes, seasonal vegetables, and white wine sauce </li>
+
+    </ul>
+
+    <ul>
+        <li style="margin: 20px; font-style: normal; font-weight: bold"> <strong>Dessert</strong></li>
+        <li style="margin: 15px;">Option 1: Individual Eton mess layers of meringue, strawberries, Chantilly cream, drizzled with coulis </li>
+        <li style="margin: 15px;">Option 2: Vanilla Panna cotta with caramalised oranges</li>
+
+    </ul>
+
+
+
+</div>
+
+</body>
+{% endblock%}
+</html>

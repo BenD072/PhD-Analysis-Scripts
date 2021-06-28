@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<Title>Ben and Monica's Wedding Guest List</Title>
+
+<ul id="navbar" class="navbar-ul">  <!-- This contains the navigation bar -->
+    <li class="navbar-li"><a href="/comments"> Comments </a> </li>
+    <li class="navbar-li"><a href="/menu"> Wedding Food Menu </a> </li>
+    <li class="navbar-li"><a href="/directions"> Directions & Accommodation </a> </li>
+    <li class="navbar-li"><a href="/"> Home </a> </li>
+    <li class="navbar-li icon" style="float:left">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </li>
+</ul>
+
+{% endblock %}
+
+{% block body %}
+
+
+<!--<div class="fade-in" style="text-align: center; width: 100%;"> -->
+    <div class="fade-in" style="position: relative; width: 100%; margin: auto; text-align: center">
+        <img id="ben-and-monica-image" src="static/images/ben_monica_image1.jpg">
+        <div class="b-m-overlay"> <p class="b-m-header"><strong>Ben and Monica</strong></p> <p class="b-m-subhead">14th May 2022</p> </div>
+    </div>
+<!--</div> -->
+
+<div> <p id="countdown" class="countdown"> We're getting married in: </p> </div>
+
+<div class="countdown-container">
+    <div class="countdown-cube"> <p class="countdown-title"> Days <p id="countdown-days" class="countdown-number">  </p> </p> </div>
+    <div class="countdown-cube"> <p class="countdown-title"> Hours <p id="countdown-hours" class="countdown-number">  </p> </p> </div>
+    <div class="countdown-cube"> <p class="countdown-title"> Minutes <p id="countdown-minutes" class="countdown-number">  </p> </p> </div>
+    <div class="countdown-cube"> <p class="countdown-title"> Seconds <p id="countdown-seconds" class="countdown-number">  </p> </p> </div>
+</div>
+<script type="text/javascript" src="{{ url_for('static', filename='js/countdown.js') }}"></script>
+
+
+{% endblock %}

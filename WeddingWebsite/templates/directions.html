@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+<html lang="en">
+{% block head %}
+<head>
+    <title>Title</title>
+    <ul id="navbar" class="navbar-ul">  <!-- This contains the navigation bar -->
+    <li class="navbar-li"><a href="/comments"> Comments </a> </li>
+    <li class="navbar-li"><a href="/menu"> Wedding Food Menu </a> </li>
+    <li class="navbar-li"><a href="/directions"> Directions & Accommodation </a> </li>
+    <li class="navbar-li"><a href="/"> Home </a> </li>
+        <li class="navbar-li icon" style="float:left">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </li>
+</ul>
+</head>
+{% endblock%}
+
+{% block body %}
+<body>
+    <h1 style="text-align: center"> Directions </h1>
+    <div id="direction-container" style="width: 100%; height: 450px; margin-top: 20px">
+        <div id="address">
+            <p> Winters Barns<br>Winters Farm<br>Nackington Road<br>Canterbury<br>Kent<br>CT4 7AY</p>
+
+        </div>
+        <div id="google-map" style="margin-bottom: 50px;">
+        <iframe
+                width="100%"
+                height="100%"
+            style="border:0"
+            loading="lazy"
+            allowfullscreen
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCCp0Lrg0QarK5sj268-eWp6y-fBpD5nBU&q=winters+barns,canterbury">
+        </iframe>
+        </div>
+
+    </div>
+
+    <h1 style="text-align: center; margin-top: 50px;"> Accommodation </h1>
+
+    <div id="accommodation-container-1" style="margin: 10px; display: grid; justify-content: space-evenly; grid-row-gap: 20px;">
+        <div class="accommodation-col-1">
+            <p>Premier Inn<br>New Dover Rd<br>Canterbury<br>Kent<br>CT1 1UP<br><a href="https://www.premierinn.com/gb/en/hotels/england/kent/canterbury/canterbury-city-centre.html"
+            >Premier Inn Website</a></p>
+        </div>
+
+        <div class="accommodation-col-2">
+            <p>ABode Canterbury<br>30-33 High St<br>Canterbury<br>Kent<br>CT1 2RX<br>Tel: 01227 766 266<br>Email: info@abodecanterbury.co.uk<br>
+            <a href="https://www.abodecanterbury.co.uk">Visit the ABode Website</a> </p>
+        </div>
+
+        <div class="accommodation-col-1">
+            <p>Best Western Abbots Barton Hotel<br>36 New Dover Road<br>Canterbury<br>Kent<br>CT1 3DU<br>Tel: 03330 030544<br><a href="https://www.bestwestern.co.uk/hotels/best-western-abbots-barton-hotel-83796">
+                Visit the Best Western Website</a></p>
+        </div>
+        <div class="accommodation-col-2">
+            <p>Canterbury Cathedral Lodge Hotel<br>Canterbury Cathedral<br>The Precincts<br>Canterbury<br>Kent<br>CT1 2EH<br>
+            Tel: 01227 865388<br>Email: stay@canterburycathedrallodge.org<br><a href="https://www.canterburycathedrallodge.org">Visit the Cathedral Lodge Website</a> </p>
+        </div>
+
+    </div>
+
+
+</body>
+{% endblock%}
+</html>

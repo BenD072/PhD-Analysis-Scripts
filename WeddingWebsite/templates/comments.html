@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+<html lang="en">
+{% block head %}
+<head>
+    <title>Comments</title>
+    <ul id="navbar" class="navbar-ul">  <!-- This contains the navigation bar -->
+    <li class="navbar-li"><a href="/comments"> Comments </a> </li>
+    <li class="navbar-li"><a href="/menu"> Wedding Food Menu </a> </li>
+    <li class="navbar-li"><a href="/directions"> Directions & Accommodation </a> </li>
+    <li class="navbar-li"><a href="/"> Home </a> </li>
+        <li class="navbar-li icon" style="float:left">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </li>
+</ul>
+</head>
+{% endblock %}
+
+{% block body %}
+<body>
+
+<div id="new-comment">
+    <p style="text-align: center; font-size: 24px; padding-top: 5px;"> <strong>Add a new comment!</strong> </p>
+    <form id="status-box" action="/comments" method="POST" style="text-align: center">
+        <input name="name-entry" class="comment-entry" type="text" placeholder="Enter your name (Optional)">
+        <input name="comment-entry" class="comment-entry" type="text" placeholder="Enter a comment...">
+        <input type="submit" value="Post">
+    </form>
+</div>
+
+<h1 style="text-align: center; margin: 10px;"> Recent Posts </h1>
+
+<div id="comments-container">
+    {% for post in posts %}
+    <div class="status-block">
+        <div class="status-name">{{ post.name }}</div>
+        <div class="status-text">{{ post.comment }} </div>
+        <div class="replies-block">
+            <div style="text-align: left; text-indent: 1em; font-size: 16px; margin-top: 10px;"><strong>Enter a Reply!</strong></div>
+            <form action="/replies/{{post.id}}" method="POST" style="text-align: left;">
+                <input name="reply-name-entry" class="reply-entry" type="text" placeholder="Enter your name (Optional)">
+                <input name="reply-comment-entry" class="reply-entry" type="text" placeholder="Enter a reply...">
+                <input type="submit" value="Post">
+            </form>
+
+            <div class="replies-list">
+                {% for i in range(post.replies| length) %}
+                <div class="reply">
+                    <div><strong>{{ post.replies[i].name }}</strong></div>
+                    <div>{{ post.replies[i].reply }}</div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+</body>
+{% endblock%}
+</html>
